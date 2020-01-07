@@ -41,7 +41,7 @@ sudo nano /etc/apt/sources.list
 
 ## Настройка Git
 
-git config --global user.email "you@example.com"
-git config --global user.name "Ваше Имя"
-git config credential.helper store (хранить логин и пароль постоянно)
+- git config --global user.email "you@example.com"
+- git config --global user.name "Ваше Имя"
+- git config credential.helper store (хранить логин и пароль постоянно)
 
