@@ -4,49 +4,49 @@
 - Установить sudo (apt install sudo)
 - Добавить пользователя в sudo (sudo adduser имя_пользователя sudo)
 - Установка шрифтов (sudo apt install ttf-freefont ttf-mscorefonts-installer)
+
+## Программы
+
 - Установка программ
-	* qalculate - калькулятор
-	* vlc - видео плеер
-	* gparted - менеджер разделов
-	* gufw - файрволл
-	* whiskermenu
-	* gnome-system-tools
-	* шрифт Ubuntu
-	* тема Mint-Y
-	* иконки Mint-Y
-	* curl
-	* Heroku CLI
-		sudo wget -q — https://toolbelt.heroku.com/install-ubuntu.sh
-		chmod +x install-ubuntu.sh
-		sudo ./install-ubuntu.sh
-	* htop
-	* aptitude
-	* apt-transport-https
-	* w64codecs
-	* install ntfs-3g ntfs-config
-	* unrar
-	* secure-delete
+	[APTITUDE]
+		apt-transport-https
+		htop			монитор ресурсов
+		vlc				видео плеер
+		ufw				файрволл
+		whiskermenu
+		gparted			менеджер разделов
+		gnome-system-tools
+		curl
+		speedtest-cli	замер скорости интернета
+		nload			мониторинг трафика в реальном времени
+		cmb				монитор трафика
+		mtr(mtr-tiny)	my traceroute
+		gnome-calculator	калькулятор
+		screen          менеджен экрана в bash
+		
+	[MANUALLY]
+	шрифт Ubuntu
+	тема Mint-Y
+	иконки Mint-Y
+	w64codecs
+	install ntfs-3g ntfs-config
+	unrar
+	secure-delete
 		после установки доступны:
 	    sfill — для очистки от следов удаленных данных свободного места
 	    srm — для надёжного удаления файлов и директорий
 	    smem — для очистки оперативной памяти
 	    sswap — для очистки раздела подкачки (свопа)
-	* dnsutils (nslookup)
-
-
-
-## Необходимые программы
-
-- Sublime text
-- QBittorrent
-- Telegram
-- Git
-- qpdfview
-- pip
-- pip3
-- Viewnior (просмоторщик изображений)
-- apt install python-virtualenv (virtualenv -p python3 venv)
-
+	dnsutils (nslookup)
+	Sublime text
+	QBittorrent
+	Telegram
+	Git
+	qTox
+	qpdfview
+	pip3
+	gThumb
+	Viewnior (просмоторщик изображений)
 
 
 ## Добавление новых репозиториев
@@ -65,21 +65,41 @@ deb-src https://deb.debian.org/debian-security/ buster/updates main contrib non-
 deb https://deb.debian.org/debian buster-updates main contrib non-free
 deb-src https://deb.debian.org/debian buster-updates main contrib non-free
 
+==
+
+deb http://deb.debian.org/debian buster main contrib non-free
+deb http://deb.debian.org/debian buster-updates main contrib non-free
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
+
 ## Работа с apt
 
+find / -name <PROGRAM> поиск файла
 apt update - обновить список пакетов
 apt list --upgradage посмотреть какие пакеты требуют обновления
 apt upgrade - обновить систему
-sudo apt-get dist-upgrade - когда не обновляются некоторые пакеты
+apt-get dist-upgrade - когда не обновляются некоторые пакеты
+apt --purge remove <PROGRAM>	удалить программу и конфиг файлы
+apt --purge --auto-remove <PROGRAM>	также удалить ненужные пакеты
+apt autoremove [приложение] удалить пакеты и зависимости
+apt auroremove удалить ненужные зависимости
 
 aptitude update
+aptitude search ?upgradable		посмотреть какие пакеты требуют обновления
 aptitude safe-upgrade
+aptitude full-upgrade
+aptitude purge					полное удаление
+Ctrl+T
+aptitude search '~i!~M'			вывести список установленных пакетов
+
 
 ## Настройка автоматического обновления
 
 aptitude update -y && aptitude install unattended-upgrades apt-listchanges -y
 
-Открыть /etc/apt/apt.conf.d/50unattended-upgrades, ниже блока Unattended-Upgrade :: Origins-Pattern добавить:
+Открыть /etc/apt/apt.conf.d/50unattended-upgrades
+- ниже блока 
+Unattended-Upgrade :: Origins-Pattern 
+- добавить:
 Unattended-Upgrade::Mail "root";
 
 dpkg-reconfigure -plow unattended-upgrades - выбрать "Да"
@@ -91,10 +111,15 @@ APT::Periodic::Unattended-Upgrade "1";
 
 В /etc/apt/listchanges.conf проверить: email_address=root
 
+## Автоматизировать aptitude update
+
+Обновлять базу каждый день в час дня
+
+sudo crontab -u root -e
+0 13 * * * aptitude update
 
 ## Настройка Git
 
 - git config --global user.email "you@example.com"
 - git config --global user.name "Ваше Имя"
 - git config credential.helper store (хранить логин и пароль постоянно)
-
