@@ -91,20 +91,19 @@ aptitude purge					полное удаление
 Ctrl+T
 aptitude search '~i!~M'			вывести список установленных пакетов
 
-
 ## Настройка автоматического обновления
 
 aptitude update -y && aptitude install unattended-upgrades apt-listchanges -y
 
 Открыть /etc/apt/apt.conf.d/50unattended-upgrades
 - ниже блока 
-Unattended-Upgrade :: Origins-Pattern 
+Unattended-Upgrade::Origins-Pattern 
 - добавить:
 Unattended-Upgrade::Mail "root";
 
 dpkg-reconfigure -plow unattended-upgrades - выбрать "Да"
 
-Убедиться что в etc/apt/apt.conf.d/20auto-upgrades: 
+Убедиться что в /etc/apt/apt.conf.d/20auto-upgrades: 
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 И добавить эту строку APT::Periodic::Verbose "2";
