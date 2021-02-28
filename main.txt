@@ -1,55 +1,58 @@
-## После установки
+-------------------------------------------------------------------------------
+После установки
 
 - Отключить cdrom в списках репозиториев
 - Установить sudo (apt install sudo)
 - Добавить пользователя в sudo (sudo adduser имя_пользователя sudo)
 - Установка шрифтов (sudo apt install ttf-freefont ttf-mscorefonts-installer)
 
-## Программы
+-------------------------------------------------------------------------------
+Программы
 
 - Установка программ
-	[APTITUDE]
-		apt-transport-https
-		htop			монитор ресурсов
-		vlc				видео плеер
-		ufw				файрволл
-		whiskermenu
-		gparted			менеджер разделов
-		gnome-system-tools
-		curl
-		speedtest-cli	замер скорости интернета
-		nload			мониторинг трафика в реальном времени
-		cmb				монитор трафика
-		mtr(mtr-tiny)	my traceroute
-		gnome-calculator	калькулятор
-		screen          менеджен экрана в bash
+
+# APTITUDE
+apt-transport-https
+htop			монитор ресурсов
+vlc				видео плеер
+ufw				файрволл
+whiskermenu
+gparted			менеджер разделов
+gnome-system-tools
+curl
+speedtest-cli	замер скорости интернета
+nload			мониторинг трафика в реальном времени
+cmb				монитор трафика
+mtr(mtr-tiny)	my traceroute
+gnome-calculator	калькулятор
+screen          менеджен экрана в bash
 		
-	[MANUALLY]
-	шрифт Ubuntu
-	тема Mint-Y
-	иконки Mint-Y
-	w64codecs
-	install ntfs-3g ntfs-config
-	unrar
-	secure-delete
-		после установки доступны:
-	    sfill — для очистки от следов удаленных данных свободного места
-	    srm — для надёжного удаления файлов и директорий
-	    smem — для очистки оперативной памяти
-	    sswap — для очистки раздела подкачки (свопа)
-	dnsutils (nslookup)
-	Sublime text
-	QBittorrent
-	Telegram
-	Git
-	qTox
-	qpdfview
-	pip3
-	gThumb
-	Viewnior (просмоторщик изображений)
+# MANUALLY
+шрифт Ubuntu
+тема Mint-Y
+иконки Mint-Y
+w64codecs
+install ntfs-3g ntfs-config
+unrar
+secure-delete
+	после установки доступны:
+    sfill — для очистки от следов удаленных данных свободного места
+    srm — для надёжного удаления файлов и директорий
+    smem — для очистки оперативной памяти
+    sswap — для очистки раздела подкачки (свопа)
+dnsutils (nslookup)
+Sublime text
+QBittorrent
+Telegram
+Git
+qTox
+qpdfview
+pip3
+gThumb
+Viewnior (просмоторщик изображений)
 
-
-## Добавление новых репозиториев
+-------------------------------------------------------------------------------
+Добавление новых репозиториев
 
 sudo nano /etc/apt/sources.list
 Добавить contrib non-free в /etc/apt/sources.list
@@ -71,7 +74,8 @@ deb http://deb.debian.org/debian buster main contrib non-free
 deb http://deb.debian.org/debian buster-updates main contrib non-free
 deb http://security.debian.org/debian-security buster/updates main contrib non-free
 
-## Работа с apt
+-------------------------------------------------------------------------------
+Работа с apt
 
 find / -name <PROGRAM> поиск файла
 apt update - обновить список пакетов
@@ -91,7 +95,14 @@ aptitude purge					полное удаление
 Ctrl+T
 aptitude search '~i!~M'			вывести список установленных пакетов
 
-## Настройка автоматического обновления
+# DPKG
+
+dpkg -l 				вывести список установленных программ
+dpkg --status			определить установлен ли пакет
+dpkg -l | grep nano  	поиск в установленных программах
+
+-------------------------------------------------------------------------------
+Настройка автоматического обновления
 
 aptitude update -y && aptitude install unattended-upgrades apt-listchanges -y
 
@@ -110,14 +121,16 @@ APT::Periodic::Unattended-Upgrade "1";
 
 В /etc/apt/listchanges.conf проверить: email_address=root
 
-## Автоматизировать aptitude update
+-------------------------------------------------------------------------------
+Автоматизировать aptitude update
 
 Обновлять базу каждый день в час дня
 
 sudo crontab -u root -e
 0 13 * * * aptitude update
 
-## Настройка Git
+-------------------------------------------------------------------------------
+Настройка Git
 
 - git config --global user.email "you@example.com"
 - git config --global user.name "Ваше Имя"
