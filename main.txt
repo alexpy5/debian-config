@@ -2,6 +2,7 @@
 После установки
 
 - Отключить cdrom в списках репозиториев
+- apt install build-essential dkms
 - Установить sudo (apt install sudo)
 - Добавить пользователя в sudo (sudo adduser имя_пользователя sudo)
 - Установка шрифтов (sudo apt install ttf-freefont ttf-mscorefonts-installer)
