@@ -6,6 +6,9 @@
 - Установить sudo (apt install sudo)
 - Добавить пользователя в sudo (sudo adduser имя_пользователя sudo)
 - Установка шрифтов (sudo apt install ttf-freefont ttf-mscorefonts-installer)
+http://packages.linuxmint.com/pool/main/m/mint-y-icons
+http://packages.linuxmint.com/pool/main/m/mint-x-icons
+http://packages.linuxmint.com/pool/main/m/mint-themes
 
 -------------------------------------------------------------------------------
 Программы
