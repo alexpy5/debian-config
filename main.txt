@@ -12,6 +12,12 @@ http://packages.linuxmint.com/pool/main/m/mint-y-icons
 http://packages.linuxmint.com/pool/main/m/mint-x-icons
 http://packages.linuxmint.com/pool/main/m/mint-themes
 
+чтобы network-manager не менял dns:
+/etc/NetworkManager/NetworkManager.conf
+dns=none
+systemctl restart network-manager.service
+после в /etc/resolv.conf прописать dns
+
 -------------------------------------------------------------------------------
 Программы
 
