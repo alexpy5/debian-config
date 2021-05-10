@@ -3,6 +3,7 @@
 
 - Отключить cdrom в списках репозиториев
 - apt install build-essential dkms
+- apt install linux-headers-$(uname -r)
 - Установить sudo (apt install sudo)
 - Добавить пользователя в sudo (sudo adduser имя_пользователя sudo)
 - Установка шрифтов (sudo apt install ttf-freefont ttf-mscorefonts-installer)
@@ -39,7 +40,7 @@ whiskermenu
 gparted			менеджер разделов
 gnome-system-tools
 curl
-speedtest-cli	замер скорости интернета
+speedtest   	замер скорости интернета
 nload			мониторинг трафика в реальном времени
 cmb				монитор трафика
 mtr(mtr-tiny)	my traceroute
@@ -47,9 +48,6 @@ gnome-calculator	калькулятор
 screen          менеджен экрана в bash
 		
 # MANUALLY
-шрифт Ubuntu
-тема Mint-Y
-иконки Mint-Y
 w64codecs
 install ntfs-3g ntfs-config
 unrar
