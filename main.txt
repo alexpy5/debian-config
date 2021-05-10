@@ -6,13 +6,22 @@
 - Установить sudo (apt install sudo)
 - Добавить пользователя в sudo (sudo adduser имя_пользователя sudo)
 - Установка шрифтов (sudo apt install ttf-freefont ttf-mscorefonts-installer)
-Ubuntu.ttf
-/home/user/.fonts
-http://packages.linuxmint.com/pool/main/m/mint-y-icons
-http://packages.linuxmint.com/pool/main/m/mint-x-icons
-http://packages.linuxmint.com/pool/main/m/mint-themes
 
-чтобы network-manager не менял dns:
+Настройка внешнего вида
+
+- Тема в настройках: Mint-Y-Dark
+- Значки: Mint-Y
+- Шрифт: Ubuntu 10
+
+Скачать
+
+- Ubuntu.ttf в /home/user/.fonts
+- http://packages.linuxmint.com/pool/main/m/mint-y-icons
+- http://packages.linuxmint.com/pool/main/m/mint-x-icons
+- http://packages.linuxmint.com/pool/main/m/mint-themes
+
+Чтобы network-manager не менял dns:
+
 /etc/NetworkManager/NetworkManager.conf
 dns=none
 systemctl restart network-manager.service
